@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import SeedInput from '../component/seed-input';
 
 //
-// Seed Verify View
+// Restore Wallet View
 //
 
-const SeedVerifyView = ({ store, nav, wallet }) => (
+const RestoreWalletView = ({ store, nav, wallet }) => (
   <SeedInput
-    title="Let's double check"
+    title="Restore your wallet"
     copy={store.seedVerifyCopy}
     navBack={nav.goSeed}
     seedInputs={store.wallet.seedVerify}
@@ -19,10 +19,10 @@ const SeedVerifyView = ({ store, nav, wallet }) => (
   />
 );
 
-SeedVerifyView.propTypes = {
+RestoreWalletView.propTypes = {
   store: PropTypes.object.isRequired,
   nav: PropTypes.object.isRequired,
   wallet: PropTypes.object.isRequired,
 };
 
-export default observer(SeedVerifyView);
+export default observer(RestoreWalletView);
