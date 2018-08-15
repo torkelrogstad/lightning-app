@@ -2,8 +2,12 @@
   "name": "lightning-app",
   "version": "0.2.0-prealpha.21",
   "description": "Lightning Wallet Application",
-  "author": "Lightning Labs, Inc",
-  "homepage": "./",
+  "author": {
+    "name": "Lightning Labs, Inc",
+    "email": "hello@lightning.engineering",
+    "url": "https://lightning.engineering"
+  },
+  "homepage": "https://lightning.engineering",
   "license": "GPL-3.0",
   "private": true,
   "main": "public/electron.js",
@@ -94,8 +98,14 @@
       "category": "Network",
       "artifactName": "${productName}-linux-${arch}v${version}.${ext}",
       "extraResources": "assets/bin/linux/lnd",
-      "icon": "assets/app-icon/desktop.png",
-      "target": "AppImage"
+      "icon": "assets/app-icon/desktop.icns",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "desktop": {
+        "MimeType": "x-scheme-handler/lightning;"
+      }
     },
     "win": {
       "artifactName": "${productName}-win32-${arch}v${version}.${ext}",
